@@ -9,7 +9,7 @@ class AirbnbBeijingCalSpider(scrapy.Spider):
 	name = "airbnb_beijing_cal"
 	allowed_domains = ["airbnb.com"]
 	start_urls = []
-	df = pd.read_csv('./airbnb_beijing.11.13.csv')
+	df = pd.read_csv('./airbnb_beijing.csv')
 	for i in df['room_id']:
 		start_urls.append("https://www.airbnb.com/api/v2/calendar_months?key=d306zoyjsyarp7ifhu67rjxn52tv0t20&currency=cny&locale=zh-cn&listing_id={}&month=9&year=2016&count=3&_format=with_conditions".format(i))
 	#start_urls.append("https://www.airbnb.com/api/v2/calendar_months?key=d306zoyjsyarp7ifhu67rjxn52tv0t20&currency=cny&locale=zh-cn&listing_id=9719293&month=9&year=2016&count=3&_format=with_conditions")
